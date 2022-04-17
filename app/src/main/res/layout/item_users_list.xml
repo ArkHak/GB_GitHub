@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/user_item_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_user_item_card_view"
+        android:layout_marginVertical="@dimen/layout_margin_vertical_user_item_card_view"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/card_corner_radius_user_item_card_view"
+        app:cardElevation="@dimen/card_elevator_user_item_card_view"
+        app:strokeColor="@color/basic_color_item_users_list"
+        app:strokeWidth="@dimen/stroke_width_user_item_card_view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/avatar_item_users_list_card_view"
+                android:layout_width="@dimen/layout_width_avatar_item_users_list_card_view"
+                android:layout_height="@dimen/layout_height_avatar_item_users_list_card_view"
+                android:layout_marginHorizontal="@dimen/layout_margin_horizontal_avatar_item_users_list_card_view"
+                app:cardCornerRadius="@dimen/card_corner_radius_avatar_item_users_list_card_view"
+                app:cardElevation="@dimen/card_elevator_avatar_item_users_list_card_view"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:strokeColor="@color/additional_color_item_users_list">
+
+                <ImageView
+                    android:id="@+id/avatar_item_users_list_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/img_user_item_default" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/login_user_item_text_view"
+                style="@style/login_item_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/avatar_item_users_list_card_view"
+                app:layout_constraintTop_toTopOf="@id/avatar_item_users_list_card_view"
+                tools:text="Большой пушистый кроль" />
+
+            <TextView
+                android:id="@+id/name_user_item_text_view"
+                style="@style/name_item_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/avatar_item_users_list_card_view"
+                app:layout_constraintTop_toBottomOf="@id/login_user_item_text_view"
+                tools:text="Иванов Иван Иванович" />
+
+            <TextView
+                android:id="@+id/repository_counters_title_user_item_text_view"
+                style="@style/repositories_text_item_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_repository_counters_title_user_item_text_view"
+                app:layout_constraintStart_toEndOf="@id/avatar_item_users_list_card_view"
+                app:layout_constraintTop_toBottomOf="@id/name_user_item_text_view" />
+
+            <TextView
+                android:id="@+id/repository_counters_user_item_text_view"
+                style="@style/counters_item_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/repository_counters_title_user_item_text_view"
+                app:layout_constraintTop_toBottomOf="@id/name_user_item_text_view"
+                app:layout_constraintTop_toTopOf="@id/repository_counters_title_user_item_text_view"
+                tools:text="666" />
+
+            <ImageView
+                android:id="@+id/ic_followers_following_users_item_image_view"
+                style="@style/ic_follows_item_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_item_users_list_card_view"
+                app:layout_constraintStart_toEndOf="@id/avatar_item_users_list_card_view"
+                app:layout_constraintTop_toBottomOf="@id/repository_counters_title_user_item_text_view" />
+
+            <TextView
+                android:id="@+id/followers_counters_text_user_item_text_view"
+                style="@style/follows_item_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_followers_counters_text_user_item_text_view"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_item_users_list_card_view"
+                app:layout_constraintStart_toEndOf="@id/ic_followers_following_users_item_image_view"
+                app:layout_constraintTop_toBottomOf="@id/repository_counters_title_user_item_text_view" />
+
+            <TextView
+                android:id="@+id/followers_counters_user_item_text_view"
+                style="@style/counters_item_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_item_users_list_card_view"
+                app:layout_constraintStart_toEndOf="@id/followers_counters_text_user_item_text_view"
+                app:layout_constraintTop_toBottomOf="@id/repository_counters_title_user_item_text_view"
+                tools:text="21404" />
+
+
+            <TextView
+                android:id="@+id/delimiter_followers_following_user_item_text_view"
+                style="@style/follows_item_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delimiter_followers_following_user_item_text_view"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_item_users_list_card_view"
+                app:layout_constraintStart_toEndOf="@id/followers_counters_user_item_text_view"
+                app:layout_constraintTop_toBottomOf="@id/repository_counters_title_user_item_text_view" />
+
+            <TextView
+                android:id="@+id/following_counters_text_user_item_text_view"
+                style="@style/follows_item_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_following_counters_text_user_item_text_view"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_item_users_list_card_view"
+                app:layout_constraintStart_toEndOf="@id/delimiter_followers_following_user_item_text_view"
+                app:layout_constraintTop_toBottomOf="@id/repository_counters_title_user_item_text_view" />
+
+            <TextView
+                android:id="@+id/following_counters_user_item_text_view"
+                style="@style/counters_item_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/avatar_item_users_list_card_view"
+                app:layout_constraintStart_toEndOf="@id/following_counters_text_user_item_text_view"
+                app:layout_constraintTop_toBottomOf="@id/repository_counters_title_user_item_text_view"
+                tools:text="210" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

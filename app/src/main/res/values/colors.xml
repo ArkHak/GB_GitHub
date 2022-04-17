@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="background_login_center">#24292F</color>
+    <color name="background_login_ends">#252a30</color>
+
+    <!-- item_users_list -->
+    <color name="basic_color_item_users_list">#FF000000</color>
+    <color name="additional_color_item_users_list">#AA000000</color>
+
 </resources>

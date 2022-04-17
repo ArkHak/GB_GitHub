@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_fragment_user_list">8dp</dimen>
+
+    <!-- item_users_list -->
+    <dimen name="layout_height_user_item_card_view">112dp</dimen>
+    <dimen name="layout_margin_vertical_user_item_card_view">4dp</dimen>
+    <dimen name="card_corner_radius_user_item_card_view">8dp</dimen>
+    <dimen name="card_elevator_user_item_card_view">3dp</dimen>
+    <dimen name="stroke_width_user_item_card_view">1dp</dimen>
+    <dimen name="layout_width_avatar_item_users_list_card_view">96dp</dimen>
+    <dimen name="layout_height_avatar_item_users_list_card_view">96dp</dimen>
+    <dimen name="layout_margin_horizontal_avatar_item_users_list_card_view">6dp</dimen>
+    <dimen name="card_corner_radius_avatar_item_users_list_card_view">16dp</dimen>
+    <dimen name="card_elevator_avatar_item_users_list_card_view">3dp</dimen>
+    <dimen name="layout_margin_start_after_avatar_user_item_text_view">8dp</dimen>
+    <dimen name="layout_margin_start_counters_user_item_text_view">4dp</dimen>
+    <dimen name="layout_margin_top_user_item_text_view">4dp</dimen>
+    <dimen name="text_size_basic_user_item_text_view">16sp</dimen>
+    <dimen name="text_size_additions_user_item_text_view">12sp</dimen>
+    <dimen name="layout_margin_bottom_user_item_text_view">4sp</dimen>
+
+</resources>

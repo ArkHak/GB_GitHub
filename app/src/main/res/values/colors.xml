@@ -8,8 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="background_login_center">#24292F</color>
-    <color name="background_login_ends">#252a30</color>
+    <color name="background_login_center">#87d3ce</color>
+    <color name="background_login_ends">#7ac1bd</color>
 
     <!-- item_users_list -->
     <color name="basic_color_item_users_list">#FF000000</color>

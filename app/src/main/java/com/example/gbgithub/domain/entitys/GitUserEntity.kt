@@ -1,7 +1,10 @@
 package com.example.gbgithub.domain.entitys
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class GitUserEntity(
     val id: Int,
     val login: String,
@@ -12,4 +15,4 @@ data class GitUserEntity(
     val publicRepos: Int,
     val followers: Int,
     val following: Int
-)
+) : Parcelable

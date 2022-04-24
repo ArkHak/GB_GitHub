@@ -5,7 +5,6 @@
         android:centerColor="@color/background_login_center"
         android:endColor="@color/background_login_ends"
         android:startColor="@color/background_login_ends"
-        android:useLevel="true"
         />
 
 </shape>

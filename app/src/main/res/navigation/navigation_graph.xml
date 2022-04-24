@@ -7,17 +7,26 @@
 
     <fragment
         android:id="@+id/usersListFragment"
-        android:name="com.example.gbgithub.ui.UsersListFragment"
+        android:name="com.example.gbgithub.ui.userslist.UsersListFragment"
         android:label="fragment_users_list"
-        tools:layout="@layout/fragment_users_list" >
+        tools:layout="@layout/fragment_users_list">
         <action
-            android:id="@+id/action_usersListFragment_to_userDetailFragment"
-            app:destination="@id/userDetailFragment" />
+            android:id="@+id/action_usersList_to_userDetail"
+            app:destination="@id/userDetailFragment">
+            <argument
+                android:name="user"
+                app:argType="com.example.gbgithub.domain.entitys.GitUserEntity"
+                app:nullable="false" />
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/userDetailFragment"
-        android:name="com.example.gbgithub.ui.UserDetailFragment"
+        android:name="com.example.gbgithub.ui.userdetail.UserDetailFragment"
         android:label="fragment_user_detail"
-        tools:layout="@layout/fragment_user_detail" />
+        tools:layout="@layout/fragment_user_detail">
+        <argument
+            android:name="user"
+            app:argType="com.example.gbgithub.domain.entitys.GitUserEntity" />
+    </fragment>
 </navigation>

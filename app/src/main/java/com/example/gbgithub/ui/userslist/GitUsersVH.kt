@@ -1,12 +1,13 @@
-package com.example.gbgithub.ui
+package com.example.gbgithub.ui.userslist
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gbgithub.R
 import com.example.gbgithub.databinding.ItemUsersListBinding
 import com.example.gbgithub.domain.entitys.GitUserEntity
 import com.squareup.picasso.Picasso
+import io.reactivex.rxjava3.subjects.PublishSubject
 
 class GitUsersVH(private val binding: ItemUsersListBinding) :
     RecyclerView.ViewHolder(binding.root) {
@@ -26,6 +27,7 @@ class GitUsersVH(private val binding: ItemUsersListBinding) :
         binding.followingCountersUserItemTextView.text = item.following.toString()
         Picasso.get()
             .load(item.avatarUrl)
+            .error(R.drawable.img_user_item_default)
             .into(binding.avatarItemUsersListImageView)
     }
 }

@@ -14,5 +14,6 @@ data class GitUserEntity(
     @SerializedName("public_repos")
     val publicRepos: Int,
     val followers: Int,
-    val following: Int
+    val following: Int,
+    val projectsList: List<GitProjectsEntity>
 ) : Parcelable

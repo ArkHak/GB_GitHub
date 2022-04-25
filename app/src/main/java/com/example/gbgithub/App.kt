@@ -3,14 +3,17 @@ package com.example.gbgithub
 import android.app.Application
 import android.content.Context
 import androidx.fragment.app.Fragment
-import com.example.gbgithub.data.MockGitUsersListImpl
-import com.example.gbgithub.data.RetrofitGitUserProjectsListImpl
-import com.example.gbgithub.domain.GitUserProjectsList
-import com.example.gbgithub.domain.GitUsersList
+import com.example.gbgithub.data.mock.MockUsersRepoImpl
+import com.example.gbgithub.data.repousecase.RepositoryUsecaseImpl
+import com.example.gbgithub.domain.UserRepo
+import com.example.gbgithub.domain.RepositoryUsecase
 
 class App : Application() {
-    val gitUsersList: GitUsersList by lazy { MockGitUsersListImpl() }
-    val gitProjectRepoList: GitUserProjectsList by lazy { RetrofitGitUserProjectsListImpl() }
+
+    private val userRepo: UserRepo by lazy { MockUsersRepoImpl() }
+    val repositoryUsecase: RepositoryUsecase by lazy {
+        RepositoryUsecaseImpl(app.userRepo)
+    }
 }
 
 val Context.app: App

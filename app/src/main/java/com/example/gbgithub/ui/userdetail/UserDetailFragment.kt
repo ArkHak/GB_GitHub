@@ -18,7 +18,7 @@ class UserDetailFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: UserDetailViewModel by activityViewModels {
-        GitUserProjectsViewModelFactory(app.gitProjectRepoList)
+        GitUserProjectsViewModelFactory(app.repositoryUsecase)
     }
     private val adapter = GitUserProjectsAdapter()
 

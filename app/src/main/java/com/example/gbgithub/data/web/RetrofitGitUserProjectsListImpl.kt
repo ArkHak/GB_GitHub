@@ -1,8 +1,7 @@
-package com.example.gbgithub.data
+package com.example.gbgithub.data.web
 
-import com.example.gbgithub.data.retrofit.GitHubApi
 import com.example.gbgithub.domain.GitUserProjectsList
-import com.example.gbgithub.domain.entitys.GitProjectEntity
+import com.example.gbgithub.domain.dto.GitProjectDto
 import io.reactivex.rxjava3.core.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
@@ -18,7 +17,7 @@ class RetrofitGitUserProjectsListImpl : GitUserProjectsList {
         .build()
     private val api: GitHubApi = retrofit.create(GitHubApi::class.java)
 
-    override fun observeGitUserProjectsList(username: String): Single<List<GitProjectEntity>> {
+    override fun observeGitUserProjectsList(username: String): Single<List<GitProjectDto>> {
         return api.listUserProjects(username)
     }
 }

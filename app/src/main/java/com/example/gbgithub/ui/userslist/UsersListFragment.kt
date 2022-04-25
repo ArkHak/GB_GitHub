@@ -16,7 +16,7 @@ class UsersListFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: UsersListViewModel by activityViewModels {
-        UsersListViewModelFactory(app.gitUsersList)
+        UsersListViewModelFactory(app.repositoryUsecase)
     }
     private val adapter = GitUsersAdapter()
 

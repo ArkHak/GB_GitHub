@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GB GitHub</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_repository_counters_title_user_item_text_view">Repositories:</string>
+    <string name="text_followers_counters_text_user_item_text_view">followers</string>
+    <string name="text_following_counters_text_user_item_text_view">following</string>
+    <string name="delimiter_followers_following_user_item_text_view">·</string>
 </resources>

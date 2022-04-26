@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="background_fragment">
+        <item name="android:background">@drawable/main_background</item>
+        <item name="android:padding">@dimen/padding_fragment_user_list</item>
+    </style>
+
+    <style name="login_item_user_text_view">
+        <item name="android:layout_marginStart">
+            @dimen/layout_margin_start_after_avatar_user_item_text_view
+        </item>
+        <item name="android:layout_marginTop">@dimen/layout_margin_top_user_item_text_view</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/basic_color_item_users_list</item>
+        <item name="android:textSize">@dimen/text_size_basic_user_item_text_view</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="name_item_user_text_view">
+        <item name="android:layout_marginStart">
+            @dimen/layout_margin_start_after_avatar_user_item_text_view
+        </item>
+        <item name="android:layout_marginTop">@dimen/layout_margin_top_user_item_text_view</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/additional_color_item_users_list</item>
+        <item name="android:textSize">@dimen/text_size_basic_user_item_text_view</item>
+    </style>
+
+    <style name="repositories_text_item_user_text_view">
+        <item name="android:layout_marginStart">
+            @dimen/layout_margin_start_after_avatar_user_item_text_view
+        </item>
+        <item name="android:layout_marginTop">@dimen/layout_margin_top_user_item_text_view</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/additional_color_item_users_list</item>
+        <item name="android:textSize">@dimen/text_size_additions_user_item_text_view</item>
+    </style>
+
+    <style name="counters_item_user_text_view">
+        <item name="android:layout_marginStart">
+            @dimen/layout_margin_start_counters_user_item_text_view
+        </item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/basic_color_item_users_list</item>
+        <item name="android:textSize">@dimen/text_size_additions_user_item_text_view</item>
+    </style>
+
+    <style name="follows_item_user_text_view">
+        <item name="android:layout_marginStart">
+            @dimen/layout_margin_start_counters_user_item_text_view
+        </item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/additional_color_item_users_list</item>
+        <item name="android:textSize">@dimen/text_size_additions_user_item_text_view</item>
+    </style>
+
+    <style name="ic_follows_item_user_text_view">
+        <item name="android:layout_marginStart">
+            @dimen/layout_margin_start_after_avatar_user_item_text_view
+        </item>
+        <item name="android:layout_marginTop">@dimen/layout_margin_top_user_item_text_view</item>
+        <item name="android:layout_marginBottom">@dimen/layout_margin_bottom_user_item_text_view
+        </item>
+        <item name="android:src">@drawable/ic_followers_following_16</item>
+    </style>
+</resources>

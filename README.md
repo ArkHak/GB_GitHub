@@ -16,8 +16,25 @@ ____
 
 ### Функционал приложения:
 
+- загрузка захардкоженного списка пользоватлей (Rx);
+- загрузка автаров пользоватлей из сети (Picasso);
+- репзиторий с пользователями хранится в App классе;
+- загрузка списка проектов пользователя (Rx+Retrofit);
+- переключение между фрагментами (Android Navigation);
+- отключена тёмная тема;
+
 ____
 
 ### Техническое составляющее проекта:
+
+- MVVM (HW_branch1_Lesson-4 16.04.2022);
+- singleActivity (HW_branch1_Lesson-4 16.04.2022);
+- viewBinding (HW_branch1_Lesson-4 16.04.2022);
+- Jetpack Navigation (HW_branch1_Lesson-4 16.04.2022);
+- Rx (HW_branch1_Lesson-4 17.04.2022);
+- Gson (HW_branch1_Lesson-4 17.04.2022);
+- Picasso (HW_branch1_Lesson-4 17.04.2022);
+- Retrofit2 (HW_branch1_Lesson-4 18.04.2022);
+- SafeArgs Navigation (HW_branch1_Lesson-4 23.04.2022);
 
 ____

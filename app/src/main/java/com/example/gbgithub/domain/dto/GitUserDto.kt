@@ -1,11 +1,8 @@
-package com.example.gbgithub.domain.entitys
+package com.example.gbgithub.domain.dto
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
-data class GitUserEntity(
+data class GitUserDto(
     val id: Int,
     val login: String,
     val name: String,
@@ -15,5 +12,4 @@ data class GitUserEntity(
     val publicRepos: Int,
     val followers: Int,
     val following: Int,
-    val projectsList: List<GitProjectsEntity>? = null
-) : Parcelable
+)

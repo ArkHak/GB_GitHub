@@ -20,4 +20,14 @@
     <dimen name="text_size_additions_user_item_text_view">12sp</dimen>
     <dimen name="layout_margin_bottom_user_item_text_view">4sp</dimen>
 
+    <!-- fragment_user_detail -->
+    <dimen name="layout_width_avatar_user_detail_card_view">156dp</dimen>
+    <dimen name="layout_height_avatar_user_detail_card_view">156dp</dimen>
+    <dimen name="margin_top_avatar_user_detail_card_view">6dp</dimen>
+    <dimen name="corner_radius_avatar_user_detail_card_view">16dp</dimen>
+    <dimen name="elevation_avatar_user_detail_card_view">6dp</dimen>
+    <dimen name="margin_top_login_user_detail_text_view">6dp</dimen>
+    <dimen name="text_size_login_user_detail_text_view">16sp</dimen>
+    <dimen name="padding_horizontal_user_detail_projects_recycler_view">6dp</dimen>
+
 </resources>

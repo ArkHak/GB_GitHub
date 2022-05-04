@@ -88,7 +88,7 @@ class MockUsersRepoImpl : UserRepo {
         var userProjects: List<GitProjectsEntity> = emptyList()
         mockListUsers.forEach { user ->
             if (user.login == login) {
-                userProjects = user.projectsList
+                userProjects = user.projectsList!!
             }
         }
         return Single.just(userProjects)

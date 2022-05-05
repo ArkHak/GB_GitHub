@@ -10,6 +10,10 @@
 
     <color name="background_login_center">#87d3ce</color>
     <color name="background_login_ends">#7ac1bd</color>
+    <color name="background_login_progress">#aa7ac1bd</color>
+
+    <color name="progress_bar_indicator">#AAff0000</color>
+    <color name="progress_bar_track">#66ff0000</color>
 
     <!-- item_users_list -->
     <color name="basic_color_item_users_list">#FF000000</color>

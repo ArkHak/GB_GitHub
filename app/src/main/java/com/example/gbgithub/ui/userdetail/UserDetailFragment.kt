@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import com.example.gbgithub.R
@@ -51,6 +52,10 @@ class UserDetailFragment : Fragment() {
     private fun initViewModelEvents() {
         viewModel.userProjectsList.observe(this) { usersList ->
             adapter.setData(usersList)
+        }
+        viewModel.inProgress.observe(this) { inProgress ->
+            binding.progressBarFrameLayout.isVisible = inProgress
+            binding.userDetailProjectsRecyclerView.isVisible = !inProgress
         }
         viewModel.updateUserProjectsListRepo(user.login)
     }

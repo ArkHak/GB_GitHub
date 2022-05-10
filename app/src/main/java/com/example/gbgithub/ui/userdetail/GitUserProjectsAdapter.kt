@@ -2,7 +2,6 @@ package com.example.gbgithub.ui.userdetail
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gbgithub.domain.dto.GitProjectDto
 import com.example.gbgithub.domain.entitys.GitProjectsEntity
 
 class GitUserProjectsAdapter : RecyclerView.Adapter<GitUserProjectVH>() {

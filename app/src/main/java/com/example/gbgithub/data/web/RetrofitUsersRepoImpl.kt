@@ -1,8 +1,8 @@
 package com.example.gbgithub.data.web
 
 import com.example.gbgithub.domain.UserRepo
-import com.example.gbgithub.domain.dto.GitProjectDto
-import com.example.gbgithub.domain.dto.GitUserDto
+import com.example.gbgithub.data.web.dto.GitProjectDto
+import com.example.gbgithub.data.web.dto.GitUserDto
 import com.example.gbgithub.domain.entitys.GitProjectsEntity
 import com.example.gbgithub.domain.entitys.GitUserEntity
 import io.reactivex.rxjava3.core.Single

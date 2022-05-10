@@ -1,4 +1,4 @@
-package com.example.gbgithub.domain.dto
+package com.example.gbgithub.data.web.dto
 
 import com.google.gson.annotations.SerializedName
 

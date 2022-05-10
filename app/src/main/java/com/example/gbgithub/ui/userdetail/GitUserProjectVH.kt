@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gbgithub.databinding.ItemProjectsListBinding
-import com.example.gbgithub.domain.dto.GitProjectDto
 import com.example.gbgithub.domain.entitys.GitProjectsEntity
 
 class GitUserProjectVH(private val binding: ItemProjectsListBinding) :

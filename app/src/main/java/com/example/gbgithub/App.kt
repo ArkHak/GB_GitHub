@@ -3,9 +3,9 @@ package com.example.gbgithub
 import android.app.Application
 import android.content.Context
 import androidx.fragment.app.Fragment
-import com.example.gbgithub.data.mock.MockUsersRepoImpl
+import com.example.gbgithub.data.datasource.mock.MockUsersRepoImpl
 import com.example.gbgithub.data.repousecase.RepositoryUsecaseImpl
-import com.example.gbgithub.data.web.RetrofitUsersRepoImpl
+import com.example.gbgithub.data.datasource.web.RetrofitUsersRepoImpl
 import com.example.gbgithub.domain.UserRepo
 import com.example.gbgithub.domain.RepositoryUsecase
 

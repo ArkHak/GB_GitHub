@@ -1,7 +1,7 @@
-package com.example.gbgithub.data.web
+package com.example.gbgithub.data.datasource.web
 
-import com.example.gbgithub.data.web.dto.GitProjectDto
-import com.example.gbgithub.data.web.dto.GitUserDto
+import com.example.gbgithub.data.datasource.web.dto.GitProjectDto
+import com.example.gbgithub.data.datasource.web.dto.GitUserDto
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Path

@@ -43,6 +43,22 @@
         app:layout_constraintTop_toBottomOf="@id/avatar_user_detail_card_view"
         tools:text="Billy" />
 
+    <FrameLayout
+        android:id="@+id/progress_bar_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_login_progress"
+        android:visibility="gone">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            app:indicatorColor="@color/progress_bar_indicator"
+            app:trackColor="@color/progress_bar_track" />
+    </FrameLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/user_detail_projects_recycler_view"
         android:layout_width="0dp"

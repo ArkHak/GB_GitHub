@@ -15,13 +15,18 @@ class UsersListViewModel(
     private val _usersList = MutableLiveData<List<GitUserEntity>>()
     val usersList: LiveData<List<GitUserEntity>> = _usersList
 
+    private val _inProgress = MutableLiveData<Boolean>()
+    val inProgress: LiveData<Boolean> = _inProgress
+
     private val compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     fun updateUsersListRepo() {
+        _inProgress.postValue(true)
         compositeDisposable.add(
             repositoryUsecase
                 .observeUsersList()
                 .subscribeBy {
+                    _inProgress.postValue(false)
                     _usersList.postValue(it)
                 }
         )

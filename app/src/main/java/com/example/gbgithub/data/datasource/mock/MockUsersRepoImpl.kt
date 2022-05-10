@@ -1,4 +1,4 @@
-package com.example.gbgithub.data.mock
+package com.example.gbgithub.data.datasource.mock
 
 import com.example.gbgithub.domain.UserRepo
 import com.example.gbgithub.domain.entitys.GitProjectsEntity

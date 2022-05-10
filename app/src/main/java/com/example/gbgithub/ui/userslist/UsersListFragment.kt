@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.gbgithub.app
@@ -50,6 +51,9 @@ class UsersListFragment : Fragment() {
     private fun initViewModelEvents() {
         viewModel.usersList.observe(this) { usersList ->
             adapter.setData(usersList)
+        }
+        viewModel.inProgress.observe(this) { inProgress ->
+            binding.progressBarFrameLayout.isVisible = inProgress
         }
         viewModel.updateUsersListRepo()
     }

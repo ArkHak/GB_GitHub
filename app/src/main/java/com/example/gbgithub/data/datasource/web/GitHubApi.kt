@@ -1,13 +1,10 @@
-package com.example.gbgithub.data.web
+package com.example.gbgithub.data.datasource.web
 
-import com.example.gbgithub.domain.dto.GitProjectDto
-import com.example.gbgithub.domain.dto.GitUserDto
+import com.example.gbgithub.data.datasource.web.dto.GitProjectDto
+import com.example.gbgithub.data.datasource.web.dto.GitUserDto
 import io.reactivex.rxjava3.core.Single
-import retrofit2.Callback
 import retrofit2.http.GET
-import retrofit2.http.Header
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface GitHubApi {
 

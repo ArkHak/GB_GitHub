@@ -6,21 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import com.example.gbgithub.R
-import com.example.gbgithub.app
 import com.example.gbgithub.databinding.FragmentUserDetailBinding
 import com.squareup.picasso.Picasso
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class UserDetailFragment : Fragment() {
 
     private var _binding: FragmentUserDetailBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: UserDetailViewModel by viewModel()
 
-    private val viewModel: UserDetailViewModel by activityViewModels {
-        GitUserProjectsViewModelFactory(app.repositoryUsecase)
-    }
     private val adapter = GitUserProjectsAdapter()
 
     private val args by navArgs<UserDetailFragmentArgs>()

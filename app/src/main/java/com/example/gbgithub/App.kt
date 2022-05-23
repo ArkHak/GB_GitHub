@@ -1,47 +1,19 @@
 package com.example.gbgithub
 
 import android.app.Application
-import android.content.Context
-import androidx.fragment.app.Fragment
-import com.example.gbgithub.data.datasource.mock.MockUsersRepoImpl
-import com.example.gbgithub.data.repousecase.RepositoryUsecaseImpl
-import com.example.gbgithub.data.datasource.web.RetrofitUsersRepoImpl
-import com.example.gbgithub.domain.UserRepo
-import com.example.gbgithub.domain.RepositoryUsecase
-
-
-private enum class DataSourceType {
-    MOCK,
-    WEB,
-}
-
-private val dataSourceType = DataSourceType.WEB
+import com.example.gbgithub.di.appModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 
 class App : Application() {
-
-    private val localUserRepo: UserRepo by lazy { MockUsersRepoImpl() }
-    private val webUserRepo: UserRepo by lazy { RetrofitUsersRepoImpl() }
-
-    private val userRepo: UserRepo by lazy { currentRepo() }
-
-    val repositoryUsecase: RepositoryUsecase by lazy {
-        RepositoryUsecaseImpl(app.userRepo)
-    }
-
-    private fun currentRepo(): UserRepo {
-        return when (dataSourceType) {
-            DataSourceType.MOCK -> {
-                localUserRepo
-            }
-            DataSourceType.WEB -> {
-                webUserRepo
-            }
+    override fun onCreate() {
+        super.onCreate()
+        startKoin {
+            androidLogger(Level.ERROR)
+            androidContext(this@App)
+            modules(appModule)
         }
     }
 }
-
-val Context.app: App
-    get() = applicationContext as App
-
-val Fragment.app: App
-    get() = requireActivity().app

@@ -6,19 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.gbgithub.app
 import com.example.gbgithub.databinding.FragmentUsersListBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class UsersListFragment : Fragment() {
 
     private var _binding: FragmentUsersListBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: UsersListViewModel by viewModel()
 
-    private val viewModel: UsersListViewModel by activityViewModels {
-        UsersListViewModelFactory(app.repositoryUsecase)
-    }
     private val adapter = GitUsersAdapter()
 
     override fun onCreateView(

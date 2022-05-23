@@ -6,21 +6,12 @@ import com.example.gbgithub.data.datasource.web.dto.GitUserDto
 import com.example.gbgithub.domain.entitys.GitProjectsEntity
 import com.example.gbgithub.domain.entitys.GitUserEntity
 import io.reactivex.rxjava3.core.Single
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import org.koin.java.KoinJavaComponent.get
+import org.koin.java.KoinJavaComponent.inject
 
-
-private const val BASE_URL_API_GITHUB = "https://api.github.com/"
-
-class RetrofitUsersRepoImpl : UserRepo {
-    private val retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL_API_GITHUB)
-        .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-        .build()
-
-    private val api: GitHubApi = retrofit.create(GitHubApi::class.java)
+class RetrofitUsersRepoImpl(
+    private val api: GitHubApi
+) : UserRepo {
 
     override fun getUsersList(): Single<List<GitUserEntity>> {
         return api.getListUsers().map { users ->

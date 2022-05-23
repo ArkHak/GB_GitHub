@@ -6,16 +6,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.gbgithub.app
 import com.example.gbgithub.databinding.FragmentUsersListBinding
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import com.example.gbgithub.domain.RepositoryUsecase
+import javax.inject.Inject
 
 
 class UsersListFragment : Fragment() {
 
     private var _binding: FragmentUsersListBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: UsersListViewModel by viewModel()
+
+    @Inject
+    lateinit var repository: RepositoryUsecase
+
+    private val viewModel: UsersListViewModel by viewModels {
+        UsersListViewModelFactory(repository)
+    }
 
     private val adapter = GitUsersAdapter()
 
@@ -29,6 +38,9 @@ class UsersListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        app.appDependenciesComponent.inject(this)
+
         initViews()
         initViewModelEvents()
         initActon()
@@ -47,10 +59,10 @@ class UsersListFragment : Fragment() {
     }
 
     private fun initViewModelEvents() {
-        viewModel.usersList.observe(this) { usersList ->
+        viewModel.usersList.observe(viewLifecycleOwner) { usersList ->
             adapter.setData(usersList)
         }
-        viewModel.inProgress.observe(this) { inProgress ->
+        viewModel.inProgress.observe(viewLifecycleOwner) { inProgress ->
             binding.progressBarFrameLayout.isVisible = inProgress
         }
         viewModel.updateUsersListRepo()

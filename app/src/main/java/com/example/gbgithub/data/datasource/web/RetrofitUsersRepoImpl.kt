@@ -6,8 +6,7 @@ import com.example.gbgithub.data.datasource.web.dto.GitUserDto
 import com.example.gbgithub.domain.entitys.GitProjectsEntity
 import com.example.gbgithub.domain.entitys.GitUserEntity
 import io.reactivex.rxjava3.core.Single
-import org.koin.java.KoinJavaComponent.get
-import org.koin.java.KoinJavaComponent.inject
+
 
 class RetrofitUsersRepoImpl(
     private val api: GitHubApi

@@ -6,17 +6,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.gbgithub.R
+import com.example.gbgithub.app
 import com.example.gbgithub.databinding.FragmentUserDetailBinding
+import com.example.gbgithub.domain.RepositoryUsecase
 import com.squareup.picasso.Picasso
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import javax.inject.Inject
 
 class UserDetailFragment : Fragment() {
 
     private var _binding: FragmentUserDetailBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: UserDetailViewModel by viewModel()
+
+    @Inject
+    lateinit var repository: RepositoryUsecase
+
+    private val viewModel: UserDetailViewModel by viewModels {
+        GitUserProjectsViewModelFactory((repository))
+    }
 
     private val adapter = GitUserProjectsAdapter()
 
@@ -33,6 +42,9 @@ class UserDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        app.appDependenciesComponent.inject(this)
+
         initViews()
         initViewModelEvents()
     }
@@ -47,10 +59,10 @@ class UserDetailFragment : Fragment() {
     }
 
     private fun initViewModelEvents() {
-        viewModel.userProjectsList.observe(this) { usersList ->
+        viewModel.userProjectsList.observe(viewLifecycleOwner) { usersList ->
             adapter.setData(usersList)
         }
-        viewModel.inProgress.observe(this) { inProgress ->
+        viewModel.inProgress.observe(viewLifecycleOwner) { inProgress ->
             binding.progressBarFrameLayout.isVisible = inProgress
             binding.userDetailProjectsRecyclerView.isVisible = !inProgress
         }
